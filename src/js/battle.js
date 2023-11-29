@@ -26,14 +26,21 @@ export function battle(arrayInput) {
   return function(action) {
     
     if (action === "playerAttacks") {
-      console.log(`Player's Strength: ${arrayInput[0].strength}`);
-      console.log(`Enemy's Health: ${arrayInput[1].health}`);
       const damageDealt = 0 - arrayInput[0].strength;
       const updatedEnemy = changeState("health")(damageDealt)(arrayInput[1]);
-      console.log(`New Enemy Health: ${updatedEnemy.health}`);
       return [arrayInput[0],updatedEnemy];
-    }  else {
+    } else if (action === "enemyAttacks") {
+      const damageDealt = 0 - arrayInput[1].strength;
+      const updatedPlayer = changeState("health")(damageDealt)(arrayInput[0]);
+      return [updatedPlayer,arrayInput[1]];
+    } else {
       return arrayInput;
     }
   }
 }
+
+
+// enemy attack
+// player block
+// enemy block
+// flee
