@@ -41,6 +41,13 @@ export const characterSelect = (state) => {
         strength: 4, 
         intelligence: 10
       }
+    } else {
+      return {
+        ...state,
+        health: 2,
+        strength: 2, 
+        intelligence: 0
+      }
     }
   }
 }

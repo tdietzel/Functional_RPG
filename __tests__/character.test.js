@@ -15,6 +15,12 @@ describe(storeState, () => {
 
   const stateControl = storeState();
 
+  test('should return initial state when no changes are made', () => {
+    const changedStateofObject = stateControl()
+    expect(changedStateofObject).toEqual(stateControl())
+  });
+
+
   test('should return changed state according to type of change (ie gainHealth) introduced', () => {
     const gainHealth = changeState('health')(1);
     const changedState = stateControl(gainHealth);
@@ -25,14 +31,16 @@ describe(storeState, () => {
 
 describe(character, () => {
   test("should hold name property", () => {
-    expect(character).toHaveProperty("name");
+    expect(character("myname")).toHaveProperty("name");
   });
 });
 
 describe(characterSelect, () => {
 
   test("should modify character state based on input", () => {
+    expect(characterSelect({name:"myname"})("caveman")).toHaveProperty("intelligence",2);
     expect(characterSelect({name:"myname"})("cavedog")).toHaveProperty("intelligence",10);
+    expect(characterSelect({name:"myname"})("something")).toHaveProperty("intelligence",0);
 
-  })
+  });
 })
