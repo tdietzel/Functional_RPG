@@ -18,8 +18,12 @@ describe(battle, () => {
   }
 
   test("should return an array of character and enemy objects", () => {
-    expect(battle([sampleCharacter,sampleEnemy])[0]).toHaveProperty("name");
-    expect(battle([sampleCharacter,sampleEnemy])[1]).toHaveProperty("type");
+    expect(battle([sampleCharacter,sampleEnemy])()[0]).toHaveProperty("name");
+    expect(battle([sampleCharacter,sampleEnemy])()[1]).toHaveProperty("type");
+  });
+  
+  test("should reduce the value of the enemy's health according to the player's attack strength when 'playerAttacks' is the action", () => {
+    expect(battle([sampleCharacter,sampleEnemy])("playerAttacks")[1]).toHaveProperty("health",-5);
   });
 })
 

@@ -1,4 +1,4 @@
-// import { storeState } from "./character";
+import { changeState } from "./character";
 // import { enemyType } from "./enemy.js";
 
 // export let myCharacter = {};
@@ -23,5 +23,17 @@
 // }
 
 export function battle(arrayInput) {
-  return arrayInput;
+  return function(action) {
+    
+    if (action === "playerAttacks") {
+      console.log(`Player's Strength: ${arrayInput[0].strength}`);
+      console.log(`Enemy's Health: ${arrayInput[1].health}`);
+      const damageDealt = 0 - arrayInput[0].strength;
+      const updatedEnemy = changeState("health")(damageDealt)(arrayInput[1]);
+      console.log(`New Enemy Health: ${updatedEnemy.health}`);
+      return [arrayInput[0],updatedEnemy];
+    }  else {
+      return arrayInput;
+    }
+  }
 }
