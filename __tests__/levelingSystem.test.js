@@ -9,6 +9,28 @@ describe(levelCalc, () => {
   });
 })
 
+
+describe(levelPerks, () => {
+
+  const sampleCharacter = {
+    name: "bob",
+    health: 10,
+    strength: 8,
+    intelligence: 2
+  }
+
+  const sampleEnemy = {
+    type: "Sabertooth",
+    health: 3,
+    strength: 8
+  }
+  
+  test("should amend player's properties based on player level", () => {
+    levelPerks(sampleCharacter,2);
+    expect(sampleCharacter.strength).toEqual(13)
+  }) 
+
+})
 // leveling system turns points into levels
 
 // Points get added after each win

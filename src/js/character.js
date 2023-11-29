@@ -9,6 +9,18 @@ export const changeState = (prop) => {
   }
 }
 
+// not tested, test later
+export const updateState = (prop) => {
+  return (value) => {
+    return (state) => (
+      {
+        ...state,
+        [prop]: (state[prop] || 0) = value
+      }
+    )
+  }
+}
+
 export const storeState = () => {
   let currentState = {};
   return (stateChangeFunction = state => state) => {
