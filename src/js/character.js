@@ -9,6 +9,15 @@ export const changeState = (prop) => {
   }
 }
 
+export const storeState = () => {
+  let currentState = {};
+  return (stateChangeFunction = state => state) => {
+    const newState = stateChangeFunction(currentState);
+    currentState = { ...newState };
+    return newState;
+  }
+}
+
 // export const character = (inputName) => {
 //   return {
 //     name: inputName,
