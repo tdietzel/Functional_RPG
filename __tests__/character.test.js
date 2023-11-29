@@ -1,4 +1,4 @@
-import { changeState, storeState, character } from "../src/js/character.js"
+import { changeState, storeState, character, characterSelect } from "../src/js/character.js"
 
 describe(changeState, () => {
 
@@ -8,11 +8,11 @@ describe(changeState, () => {
     const newState = changeState(property)(value)({});
     expect(newState.sampleProperty).toEqual(2);
   });
-  
+
 });
 
 describe(storeState, () => {
-  
+
   const stateControl = storeState();
 
   test('should return changed state according to type of change (ie gainHealth) introduced', () => {
@@ -24,7 +24,15 @@ describe(storeState, () => {
 });
 
 describe(character, () => {
-    test("should hold name property", () => {
-        expect(character).toHaveProperty("name");
-    });
+  test("should hold name property", () => {
+    expect(character).toHaveProperty("name");
+  });
 });
+
+describe(characterSelect, () => {
+
+  test("should modify character state based on input", () => {
+    expect(characterSelect({name:"myname"})("cavedog")).toHaveProperty("intelligence",10);
+
+  })
+})
