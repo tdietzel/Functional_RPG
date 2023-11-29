@@ -22,11 +22,13 @@ describe(battle, () => {
     expect(battle([sampleCharacter,sampleEnemy])(0)()[1]).toHaveProperty("type");
   });
   
-  test("should reduce the value of the enemy's health according to the player's attack strength when 'playerAttacks' is the action", () => {
+  test("should reduce the value of the defender's health according to the attacker's attack strength when 'attacks' is the action", () => {
     expect(battle([sampleCharacter,sampleEnemy])(0)("attacks")[1]).toHaveProperty("health",-5);
+    expect(battle([sampleCharacter,sampleEnemy])(1)("attacks")[0]).toHaveProperty("health", 2);
   });
 
-  test("should reduce the value of the player's health according to the enemy's attack strength when 'enemyAttacks' is the action", () => {
-    expect(battle([sampleCharacter,sampleEnemy])(1)("attacks")[0]).toHaveProperty("health", 2);
+  test("should reduce the value of the blocker's health by .25% of the attacker's attack strength when 'blocks' is the action", () => {
+    expect(battle([sampleCharacter,sampleEnemy])(0)("blocks")[0]).toHaveProperty("health", 8);
+    expect(battle([sampleCharacter,sampleEnemy])(1)("blocks")[1]).toHaveProperty("health", 1);
   });
 })

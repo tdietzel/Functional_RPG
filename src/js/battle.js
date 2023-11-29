@@ -56,6 +56,14 @@ export function battle(arrayInput) {
         } else {
           return [updatedEntity,arrayInput[1]];
         }
+      } else if (action === "blocks") {
+        const damageDealt = 0 - ((arrayInput[otherEntity].strength) * .25);
+        const updatedEntity = changeState("health")(damageDealt)(arrayInput[entityId]);
+        if (entityId === 0) {
+          return [updatedEntity,arrayInput[1]];
+        } else {
+          return [arrayInput[0],updatedEntity];
+        }
       } else {
         return arrayInput;
       }
