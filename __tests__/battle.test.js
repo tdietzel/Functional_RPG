@@ -1,6 +1,4 @@
 import { battle } from "../src/js/battle.js"
-// import { enemyType } from "../src/js/enemy.js";
-// import { changeState } from "../src/js/character.js"
 
 describe(battle, () => {
 
