@@ -51,31 +51,3 @@ export const characterSelect = (state) => {
     }
   }
 }
-
-// export function plantType(state) {
-//   return function (type) {
-//     if (type === "daisy") {
-//       return {
-//         ...state,
-//         name: "Daisy",
-//         size: 10,
-//         happiness: 4,
-//       }
-//     }
-//     else if (type === "rose") {
-//       return {
-//         ...state,
-//         name: "Rose",
-//         size: 10,
-//         smelliness: 5,
-//       }
-//     } else {
-//       return {
-//         ...state,
-//         name: "Common houseplant",
-//         size: 10,
-//         rarity: 0,
-//       }
-//     }
-//   }
-// }  
