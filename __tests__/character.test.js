@@ -1,5 +1,5 @@
 import { changeState } from "../src/js/character.js"
-// import { storeState } from "../src/js/character.js"
+import { storeState } from "../src/js/character.js"
 
 describe(changeState, () => {
 
@@ -12,17 +12,17 @@ describe(changeState, () => {
   
 });
 
-// describe(storeState, () => {
+describe(storeState, () => {
   
-//   const stateControl = storeState();
+  const stateControl = storeState();
 
-//   test('should return changed state according to type of change (ie bluefood) introduced', () => {
-//     const blueFood = changeState('soil')(5);
-//     const changedStateofObject = stateControl(blueFood);
-//     expect(changedStateofObject.soil).toEqual(5);
+  test('should return changed state according to type of change (ie gainHealth) introduced', () => {
+    const gainHealth = changeState('health')(1);
+    const changedState = stateControl(gainHealth);
+    expect(changedState.health).toEqual(1);
+  });
 
-//   });
-// })
+});
 // describe(character, () => {
 //     test("should hold name property", () => {
 //         expect(character).toContain("name");
