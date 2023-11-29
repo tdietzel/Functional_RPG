@@ -18,8 +18,8 @@ export const storeState = () => {
   }
 }
 
-// export const character = (inputName) => {
-//   return {
-//     name: inputName,
-//   }
-// }
+export const character = (inputName) => {
+  return {
+    name: inputName,
+  }
+}

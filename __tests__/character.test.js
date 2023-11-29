@@ -1,5 +1,4 @@
-import { changeState } from "../src/js/character.js"
-import { storeState } from "../src/js/character.js"
+import { changeState, storeState, character } from "../src/js/character.js"
 
 describe(changeState, () => {
 
@@ -23,8 +22,9 @@ describe(storeState, () => {
   });
 
 });
-// describe(character, () => {
-//     test("should hold name property", () => {
-//         expect(character).toContain("name");
-//     });
-// });
+
+describe(character, () => {
+    test("should hold name property", () => {
+        expect(character).toHaveProperty("name");
+    });
+});
