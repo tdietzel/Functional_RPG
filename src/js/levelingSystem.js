@@ -14,8 +14,12 @@ export const levelPerks = (character, level) => {
   level === 2 && !(character.level === 2) ? (() => {
     const updatedLevelProp = changeState("level")("=")(2)(character);
     const updatedPerk = changeState("strength")()(3)(updatedLevelProp)
-    console.log(updatedPerk);
     return updatedPerk;
   })() :
   character;
+}
+
+export const addXP = (arrayInput) => {
+  const updatedXP = changeState("xp")()(arrayInput[1].xp)(arrayInput[0]);
+  return updatedXP;
 }

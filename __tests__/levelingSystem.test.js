@@ -1,4 +1,4 @@
-import { levelCalc, levelPerks } from "../src/js/levelingSystem.js"
+import { levelCalc, levelPerks, addXP } from "../src/js/levelingSystem.js"
 
 describe(levelCalc, () => {
 
@@ -19,19 +19,33 @@ describe(levelPerks, () => {
     intelligence: 2
   }
 
-  const sampleEnemy = {
-    type: "Sabertooth",
-    health: 3,
-    strength: 8
-  }
-  
   test("should amend player's properties based on player level", () => {
     expect(levelPerks(sampleCharacter,4).strength).toEqual(8);
     expect(levelPerks(sampleCharacter,3).strength).toEqual(13);
     expect(levelPerks(sampleCharacter,2).strength).toEqual(11);
     expect(levelPerks(sampleCharacter,1).strength).toEqual(8);
-  }) 
+  });
+})
 
+describe(addXP, () => {
+  
+  const sampleCharacter = {
+    name: "bob",
+    health: 10,
+    strength: 8,
+    intelligence: 2
+  }
+
+  const sampleEnemy = {
+    type: "Sabertooth",
+    health: 3,
+    strength: 8,
+    xp: 3
+  }
+  
+  test("should add experience points (XP) to the player based on the enemy's XP", () => {
+    expect(addXP([sampleCharacter,sampleEnemy]).xp).toEqual(3);
+  });
 })
 
 // leveling system turns points into levels
