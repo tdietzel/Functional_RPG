@@ -1,0 +1,32 @@
+body {
+  background-image: url("https://wallpapercave.com/wp/wp1812763.jpg");
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+#playerSetup {
+  text-align: center;
+}
+
+#battleScreen {
+  text-align: center;
+}
+
+#displayStats {
+  display: flex;
+  text-align: center;
+  margin: 20px;
+  justify-content: space-evenly;
+}
+
+.entityStatsHolder {
+  margin: 20px;
+  width: 40%;
+}
+

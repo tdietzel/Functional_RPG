@@ -3,9 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Caveman RPG</title>
 </head>
 <body>
-    
+    <h1>🦕🔥🍖CAVEMAN RPG🦴🏹🎯</h1>
+    <br>
+
+    <div id="playerSetup">
+        <h3>Create a Character</h3>
+        <form id="playerCreator">
+            <label for="playerName">Character's Name:</label>
+            <input id="playerName" type="text" required>
+            <label>
+                <input type="radio" name="playerType" value="Caveman" checked>
+                Caveman
+            </label>
+            <label>
+                <input type="radio" name="playerType" value="Cavedog">
+                Cavedog
+            </label>
+            <button type="submit">Create Character</button>
+        </form>
+    </div>
+
+    <div id="battleScreen" class="hidden">
+        <h3>Fight an Enemy</h3>
+        <div id="displayStats">
+            <div id="playerStats" class="entityStatsHolder">
+                <h5 id="characterName">No character selected</h5>
+                <p>Health: <span id="playerHealthStat" class="stat">0</span><br>
+                Strength: <span id="playerStrengthStat" class="stat">0</span><br>
+                Intelligence: <span id="playerIntelligenceStat" class="stat">0</span><br>
+                XP: <span id="playerXPStat" class="stat">0</span><br>
+                Level: <span id="playerLevelStat" class="stat">0</span></p>
+            </div>
+
+            <div id="enemyStats" class="entityStatsHolder">
+                <h5 id="enemyType">No current enemy</h5>
+                <p>Health: <span id="enemyHealthStat" class="stat">0</span><br>
+                Strength: <span id="enemyStrengthStat" class="stat">0</span><br>
+                Intelligence: <span id="enemyIntelligenceStat" class="stat">0</span><br>
+                XP: <span id="enemyXPStat" class="stat">0</span><br>
+                Level: <span id="enemyLevelStat" class="stat">0</span></p>
+            </div>
+        </div>
+
+        <div id="actionButtonsHolder">
+            <button id="actionAttack" class="actionButton">Attack</button>
+            <button id="actionBlock" class="actionButton">Block</button>
+            <button id="actionFlee" class="actionButton">Flee</button>
+        </div>
+
+        <p id="battleStatusMessage">No battle currently in progress. Start one now!</p>
+
+    </div>
+
 </body>
 </html>
