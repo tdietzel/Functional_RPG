@@ -1,4 +1,4 @@
-import { levelCalc } from "../src/js/levelingSystem.js"
+import { levelCalc, levelPerks } from "../src/js/levelingSystem.js"
 
 describe(levelCalc, () => {
 
@@ -10,27 +10,30 @@ describe(levelCalc, () => {
 })
 
 
-// describe(levelPerks, () => {
+describe(levelPerks, () => {
 
-//   const sampleCharacter = {
-//     name: "bob",
-//     health: 10,
-//     strength: 8,
-//     intelligence: 2
-//   }
+  const sampleCharacter = {
+    name: "bob",
+    health: 10,
+    strength: 8,
+    intelligence: 2
+  }
 
-//   const sampleEnemy = {
-//     type: "Sabertooth",
-//     health: 3,
-//     strength: 8
-//   }
+  const sampleEnemy = {
+    type: "Sabertooth",
+    health: 3,
+    strength: 8
+  }
   
-//   test("should amend player's properties based on player level", () => {
-//     levelPerks(sampleCharacter,2);
-//     expect(sampleCharacter.strength).toEqual(13)
-//   }) 
+  test("should amend player's properties based on player level", () => {
+    expect(levelPerks(sampleCharacter,4).strength).toEqual(8);
+    expect(levelPerks(sampleCharacter,3).strength).toEqual(13);
+    expect(levelPerks(sampleCharacter,2).strength).toEqual(11);
+    expect(levelPerks(sampleCharacter,1).strength).toEqual(8);
+  }) 
 
-// })
+})
+
 // leveling system turns points into levels
 
 // Points get added after each win

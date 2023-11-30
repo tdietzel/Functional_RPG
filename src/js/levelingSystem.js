@@ -5,20 +5,17 @@ export function levelCalc(input) {
   return input >= 20 ? 3 : input >= 10 ? 2 : 1;
 }
 
-// export function levelPerks(character, level) {
-//   if ((level === 3) && !(character.level === 3)) {
-//     const updatedLevelProp = updateState("level")(3)(character);
-//     const updatedPerk = changeState("strength")(5)(updatedLevelProp)
-//     return updatedPerk;
-//   }
-// }
-
-// Example of using ternary operators instead of If / else statements
-
-// export function levelPerks(character, level) {
-//   level === 3 && !(character.level === 3) ? (() => {
-//     const updatedLevelProp = updateState("level")(3)(character);
-//     const updatedPerk = changeState("strength")(5)(updatedLevelProp)
-//     return updatedPerk;
-//   })() : character;
-// }
+export const levelPerks = (character, level) => {
+  return level === 3 && !(character.level === 3) ? (() => {
+    const updatedLevelProp = changeState("level")("=")(3)(character);
+    const updatedPerk = changeState("strength")()(5)(updatedLevelProp)
+    return updatedPerk;
+  })() :
+  level === 2 && !(character.level === 2) ? (() => {
+    const updatedLevelProp = changeState("level")("=")(2)(character);
+    const updatedPerk = changeState("strength")()(3)(updatedLevelProp)
+    console.log(updatedPerk);
+    return updatedPerk;
+  })() :
+  character;
+}
