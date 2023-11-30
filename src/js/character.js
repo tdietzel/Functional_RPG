@@ -1,21 +1,11 @@
-export const changeState = (prop) => (value) => (state) => (
-  {
-    ...state,
-    [prop]: (state[prop] || 0) + value
-  }
-);
-
-// not tested, test later
-// export const updateState = (prop) => {
-//   return (value) => {
-//     return (state) => (
-//       {
-//         ...state,
-//         [prop]: (state[prop] || 0) = value
-//       }
-//     )
-//   }
-// }
+export const changeState = (prop) => (type) => (value) => (state) => {
+    return type === "+" ? {...state, [prop]: (state[prop] || 0) + value }:
+    type === "-" ? {...state, [prop]: (state[prop] || 0) - value }:
+    type === "*" ? {...state, [prop]: (state[prop] || 0) * value }:
+    type === "/" ? {...state, [prop]: (state[prop] || 0) / value }:
+    type === "=" ? { ...state, [prop]: value } :
+    {...state, [prop]: (state[prop] || 0) + value }
+};
 
 export const storeState = () => {
   let currentState = {};

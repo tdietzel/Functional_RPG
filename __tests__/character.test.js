@@ -5,8 +5,18 @@ describe(changeState, () => {
   test("should change state based on inputted values and return the new state", () => {
     const property = "sampleProperty";
     const value = 2;
-    const newState = changeState(property)(value)({});
-    expect(newState.sampleProperty).toEqual(2);
+    const addState = changeState(property)("+")(value)({});
+    const subtractState = changeState(property)("-")(value)({});
+    const multiplyState = changeState(property)("*")(value)({});
+    const divideState = changeState(property)("/")(value)({});
+    const equalState = changeState(property)("=")(value)({});
+    const emptyState = changeState(property)()(value)({});
+    expect(addState.sampleProperty).toEqual(2);
+    expect(subtractState.sampleProperty).toEqual(-2);
+    expect(multiplyState.sampleProperty).toEqual(0);
+    expect(divideState.sampleProperty).toEqual(0);
+    expect(equalState.sampleProperty).toEqual(2);
+    expect(emptyState.sampleProperty).toEqual(2);
   });
 
 });
@@ -22,7 +32,7 @@ describe(storeState, () => {
 
 
   test('should return changed state according to type of change (ie gainHealth) introduced', () => {
-    const gainHealth = changeState('health')(1);
+    const gainHealth = changeState('health')("+")(1);
     const changedState = stateControl(gainHealth);
     expect(changedState.health).toEqual(1);
   });

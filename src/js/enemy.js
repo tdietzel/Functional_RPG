@@ -1,25 +1,19 @@
 export const enemyType = (type) => {
-  if (type === "Swoopbird") {
-    return {
-      type: "Swoopbird",
-      health: 3,
-      strength: 8,
-      xp: 3
-    }
-  }
-  else if (type === "Sabertooth") {
-    return {
-      type: "Sabertooth",
-      health: 3,
-      strength: 8,
-      xp: 3
-    }
-  } else {
-    return {
-      type: "Insect",
-      health: 1,
-      strength: 0.2,
-      xp: 0.1
-    }
+  return type === "Swoopbird" ? {
+    type: "Swoopbird",
+    health: 3,
+    strength: 8,
+    xp: 3
+  } : 
+  type === "Sabertooth" ? {
+    type: "Sabertooth",
+    health: 3,
+    strength: 8,
+    xp: 3
+  } : {
+    type: "Insect",
+    health: 1,
+    strength: 0.2,
+    xp: 0.1
   }
 }
