@@ -1,5 +1,5 @@
-# *PROJECT NAME*
-#### By Trent Dietzel
+# *Caveman RPG*
+#### By Trent Dietzel, [Aaron Mejia](https://github.com/mejia-dev), [Brianca Knight](https://github.com/BriancaKnight)
 
 ## Table of Contents
 - [About](#about)
@@ -21,9 +21,6 @@ The primary functionality of the application is *FILL IN*...:
 - 
 - 
 
-## Demo
-You can try out the live demo of *PROJECT NAME* [here](https://tdietzel22.github.io/Mr_Robo_Neighborhood/).
-
 ## Technologies Used
 - HTML
 - CSS (Bootstrap for styling)
@@ -43,11 +40,11 @@ Follow these steps to set up the project locally:
 1. Open Git BASH [Download Link](https://gitforwindows.org/)
 2. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/username/projectName
+   git clone https://github.com/tdietzel/functional_RPG
    ```
 3. Open the project directory:
    ```bash
-   cd ProjectName
+   cd functional_RPG
    ```
 4. Open in a code editor like __Visual Studio Code__.
 5. Open the VS Code terminal and enter this command to install needed dependencies:
@@ -61,8 +58,8 @@ Follow these steps to set up the project locally:
 
 ## Usage
 
-To use *PROJECT NAME*:
-1. Visit the website [Here](https://tdietzel22.github.io/*PROJECT_NAME*/).
+To play *Caveman RPG*:
+1. Visit the website [Here](https://tdietzel22.github.io/*functional_RPG*/).
 2. 
 3. 
 4. 
@@ -81,7 +78,7 @@ I welcome contributions to improve the project. If you'd like to contribute, ple
 
 ## Known Bugs
 
-* _N/A_
+* _Not fully finished ( WIP )_
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
