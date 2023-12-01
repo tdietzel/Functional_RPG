@@ -26,7 +26,7 @@ function resetEnemies() {
   document.querySelector("p#enemyStatDisplay #enemyStrengthStat").innerHTML = ``;
   document.querySelector("p#enemyStatDisplay #enemyIntelligenceStat").innerHTML = ``;
   document.querySelector("#battleStatusMessage").innerText = "No battle currently in progress. Start one now!";
-  
+
   document.getElementById("startBattle").removeAttribute("class");
 }
 
@@ -60,10 +60,13 @@ function battleStarter() {
   printEnemyDetails();
 
   document.querySelector("button#actionAttack").addEventListener('click', () => {
-    battle([myPlayer, currentEnemy])(0)("attacks");
+    currentEnemy = battle([myPlayer, currentEnemy])(0)("attacks");
+
+    printEnemyDetails();
   });
   document.querySelector("button#actionBlock").addEventListener('click', () => {
-    battle([myPlayer, currentEnemy])(0)("blocks");
+    myPlayer = battle([myPlayer, currentEnemy])(0)("blocks");
+    printCharacterDetails();
   });
   document.querySelector("button#actionFlee").addEventListener('click', () => {
     printCharacterDetails();
