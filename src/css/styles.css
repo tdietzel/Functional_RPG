@@ -1,32 +1,110 @@
 body {
-  background-image: url("https://wallpapercave.com/wp/wp1812763.jpg");
-}
-
-.hidden {
-  display: none;
+  background-image: url('../img/backgroundRPG.jpg');
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
   text-align: center;
+  margin: 20px 0;
+  font-size: 2em;
 }
 
-#playerSetup {
-  text-align: center;
-}
-
+#playerSetup,
 #battleScreen {
-  text-align: center;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  color: #333;
+}
+
+form {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
 }
 
 #displayStats {
   display: flex;
-  text-align: center;
-  margin: 20px;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .entityStatsHolder {
-  margin: 20px;
-  width: 40%;
+  width: 45%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
+.entityStatsHolder h5 {
+  margin-top: 0;
+  color: #333;
+}
+
+.stat {
+  font-weight: bold;
+}
+
+#actionButtonsHolder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actionButton {
+  width: 30%;
+  padding: 10px 15px;
+}
+
+#battleStatus {
+  text-align: center;
+}
+
+#startBattle {
+  background-color: #ff9800;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#startBattle:hover {
+  background-color: #e68a00;
+}
+
+.hidden {
+  display: none !important;
+}
