@@ -12,7 +12,7 @@
     <div id="playerSetup">
         <h3>Create a Character</h3>
         <form id="playerCreator">
-            <label for="playerName">Character's Name:</label>
+            <label for="playerName">Player's Name:</label>
             <input id="playerName" type="text" required>
             <label>
                 <input type="radio" name="playerType" value="Caveman" checked>
@@ -22,7 +22,7 @@
                 <input type="radio" name="playerType" value="Cavedog">
                 Cavedog
             </label>
-            <button type="submit">Create Character</button>
+            <button type="submit" id="createCharacter">Create Character</button>
         </form>
     </div>
 
@@ -40,11 +40,9 @@
 
             <div id="enemyStats" class="entityStatsHolder">
                 <h5 id="enemyType">No current enemy</h5>
-                <p>Health: <span id="enemyHealthStat" class="stat">0</span><br>
+                <p id="enemyStatDisplay">Health: <span id="enemyHealthStat" class="stat">0</span><br>
                 Strength: <span id="enemyStrengthStat" class="stat">0</span><br>
                 Intelligence: <span id="enemyIntelligenceStat" class="stat">0</span><br>
-                XP: <span id="enemyXPStat" class="stat">0</span><br>
-                Level: <span id="enemyLevelStat" class="stat">0</span></p>
             </div>
         </div>
 
@@ -54,8 +52,11 @@
             <button id="actionFlee" class="actionButton">Flee</button>
         </div>
 
-        <p id="battleStatusMessage">No battle currently in progress. Start one now!</p>
-
+        <br>
+        <div id="battleStatus">
+            <p id="battleStatusMessage">No battle currently in progress. Start one now!</p>
+            <button id="startBattle">Start BATTLE!!!</button>
+        </div>
     </div>
 
 </body>

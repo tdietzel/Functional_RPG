@@ -4,9 +4,9 @@ import { changeState } from "./character";
 export const battle = (arrayInput) => (entityId) => (action) => {
   const otherEntity = entityId === 0 ? 1: 0;
   return action === "attacks" ? (() => {
-    const damageDealt = arrayInput[entityId].strength;
+    const damageDealt = arrayInput[otherEntity].strength;
     const updatedEntity = changeState("health")("-")(damageDealt)(arrayInput[otherEntity]);
-    return entityId === 0 ? [arrayInput[0],updatedEntity] : [updatedEntity,arrayInput[1]];
+    return otherEntity === 0 ? [arrayInput[0],updatedEntity] : [updatedEntity,arrayInput[1]];
   })() : 
     action === "blocks" ? (() => {
       const damageDealt = ((arrayInput[otherEntity].strength) * .25);
