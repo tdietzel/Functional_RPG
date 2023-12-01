@@ -1,7 +1,9 @@
 import { changeState } from "./character";
+// import { myPlayer } from "../index.js";
 
-export function levelCalc(input) {
-  return input >= 20 ? 3 : input >= 10 ? 2 : 1;
+export function levelCalc(character) {
+  const level = character.xp >= 20 ? 3 : character.xp >= 10 ? 2 : 1;
+  return levelPerks(character,level);
 }
 
 export const levelPerks = (character, level) => {
@@ -19,6 +21,6 @@ export const levelPerks = (character, level) => {
 };
 
 export const addXP = (arrayInput) => {
-  const updatedXP = changeState("xp")()(arrayInput[1].xp)(arrayInput[0]);
-  return updatedXP;
+  arrayInput[0].xp = changeState("xp")('+')(arrayInput[1].xp)(arrayInput[0]).xp;
+  return levelCalc(arrayInput[0]);
 };

@@ -1,9 +1,14 @@
+// What happens when players health reaches 0 or below?
+// How can the enemy attack player?
+// Figure out level scaling
+// Figure out characters and enemy stats
+
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import { changeState, storeState, character, characterSelect } from "./js/character.js";
 import { enemyType } from "./js/enemy.js";
-import { battle } from "./js/battle.js";
+import { battle, checkDeath } from "./js/battle.js";
 import { levelCalc, levelPerks, addXP } from "./js/levelingSystem.js";
 
 let myPlayer = {};
@@ -19,6 +24,7 @@ function printCharacterDetails() {
 }
 
 function resetEnemies() {
+  currentEnemy = {};
   document.querySelector("h5#enemyType") ? document.querySelector("h5#enemyType").innerText = "No current enemy" : null;
 
   // --UPDATE Reset currentEnemy and print null?
@@ -61,8 +67,8 @@ function battleStarter() {
 
   document.querySelector("button#actionAttack").addEventListener('click', () => {
     currentEnemy = battle([myPlayer, currentEnemy])(0)("attacks");
-
-    printEnemyDetails();
+    let battlePlayers = [myPlayer, currentEnemy];
+    checkDeath(currentEnemy) ? (myPlayer = addXP(battlePlayers), resetEnemies(), printCharacterDetails()) : printEnemyDetails();
   });
   document.querySelector("button#actionBlock").addEventListener('click', () => {
     myPlayer = battle([myPlayer, currentEnemy])(0)("blocks");

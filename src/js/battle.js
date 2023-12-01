@@ -14,6 +14,10 @@ export const battle = (arrayInput) => (entityId) => (action) => {
     })() : arrayInput;
 };
 
+// write a test for function
+export function checkDeath(enemy) {
+  return enemy.health <= 0 ? true : false;
+}
 // export function battleOld(arrayInput) {
 //   return function(entityId) {
 //     let otherEntity = 0;

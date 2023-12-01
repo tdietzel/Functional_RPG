@@ -1,7 +1,8 @@
 export const enemyType = (type) => {
   return type === "Swoopbird" ? {
     type: "Swoopbird",
-    health: 3,
+    health: 30,
+    //3
     strength: 8,
     xp: 3
   } : 
