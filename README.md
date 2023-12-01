@@ -1,4 +1,4 @@
-# *Caveman RPG*
+# Caveman RPG
 #### By Trent Dietzel, [Aaron Mejia](https://github.com/mejia-dev), [Brianca Knight](https://github.com/BriancaKnight)
 
 ## Table of Contents
@@ -14,12 +14,17 @@
 - [Contact](#contact)
 
 ## About
-*ABOUT SECTION*
 
-The primary functionality of the application is *FILL IN*...:
-- 
-- 
-- 
+**Caveman RPG** is an interactive text-based role-playing game where players can create characters, fight enemies, and explore the primitive world of cavemen. The game is a work in progress and is being developed by Trent Dietzel, Aaron Mejia, and Brianca Knight.
+
+### Primary Functionality
+The primary functionality of the application includes:
+- Character creation with options for Caveman or Cavedog.
+- Turn-based battles with enemies, featuring attack, block, and flee actions.
+- Basic leveling system with experience points (XP) and character stats.
+
+## Demo
+![Caveman RPG Demo](#) <!-- Add link to game -->
 
 ## Technologies Used
 - HTML
@@ -31,8 +36,9 @@ The primary functionality of the application is *FILL IN*...:
 - Jest: for testing the JavaScript code
 
 ## Features
-- **FEATURE**: 
-- **FEATURE**: 
+- **Character Creation:** Players can create their characters by choosing a name and type (Caveman or Cavedog).
+- **Turn-Based Battles:** Engage in battles with enemies through a turn-based system, with actions like attack, block, and flee.
+- **Leveling System:** Characters gain experience points (XP) and level up as they defeat enemies.
 
 ## Installation
 
@@ -59,12 +65,10 @@ Follow these steps to set up the project locally:
 ## Usage
 
 To play *Caveman RPG*:
-1. Visit the website [Here](https://tdietzel22.github.io/*functional_RPG*/).
-2. 
-3. 
-4. 
-5. 
-6. 
+🛑 - Website down 🟢 - Website Live
+1. Visit the website 🛑[Here](https://tdietzel22.github.io/functional_RPG/).
+2. Follow the on-screen instructions to create your character.
+3. Engage in battles with enemies using the provided actions (👊 attack, 🛡️ block, 🏃 flee).
 
 ## Contributing
 
